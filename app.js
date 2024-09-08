@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const userRoute = require('./routes/users');
+require('dotenv').config();
 
 // Middleware para parsing de JSON
 app.use(express.json());
