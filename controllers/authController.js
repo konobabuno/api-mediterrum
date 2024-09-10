@@ -14,7 +14,7 @@ const login = (req, res) => {
 
   if (isMatch) {
     // Generar un token JWT solo usando la contraseña y el JWT_SECRET
-    const token = jwt.sign({ password: process.env.JWT_PASSWORD }, process.env.JWT_SECRET, { expiresIn: '1h' });
+    const token = jwt.sign({ password: process.env.JWT_PASSWORD }, process.env.JWT_SECRET, { expiresIn: '8h' });
     return res.json({ token });
   } else {
     return res.status(400).json({ message: 'Contraseña incorrecta' });

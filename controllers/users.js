@@ -13,11 +13,11 @@ const obtenerDatos = (req, res) => {
 
 // Insertar un nuevo usuario
 const insertarUsuario = (req, res) => {
-  const { nombre, email, telefono, rol, comision, activo, fecha_inicio, fecha_fin } = req.body;
+  const { nombre, email, telefono, rol, puntos_total, nivel, id_distribuidor, id_promotor } = req.body;
 
   const query = `CALL insertar_usuario(?, ?, ?, ?, ?, ?, ?, ?)`;
 
-  connection.query(query, [nombre, email, telefono, rol, comision, activo, fecha_inicio, fecha_fin], (err, results) => {
+  connection.query(query, [nombre, email, telefono, rol, puntos_total, nivel, id_distribuidor, id_promotor], (err, results) => {
     if (err) {
       return res.status(500).send(err);
     }
